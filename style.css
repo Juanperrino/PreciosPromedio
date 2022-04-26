@@ -1,0 +1,231 @@
+@import url("https://fonts.googleapis.com/css?family=Comfortaa:400,900,300|Quattrocento");
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* content{
+    margin: 0 auto;
+} */
+
+h1,h2,h3,h4,h5 {
+font-family: 'Comfortaa', cursive;
+font-weight: 900;
+color: #07374a; 
+}
+
+p {
+font-family: "Quattrocento", sans-serif;
+color: #f0f0e6; 
+}
+
+
+
+.arriba {
+    background-color: #0b445a; 
+    padding: 2rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+
+}
+
+.arriba h1{
+    font-size: 2.5rem;
+    text-align: center;
+    color: #ffffff;
+
+
+}
+
+.arriba p {
+    color: #25b79f; 
+    text-align: center;
+}
+
+
+/*Paso 1*/
+.paso1 {
+    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(to right, #25c481, #25b7c4);
+    padding: 3rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    padding: 10rem;
+
+
+}
+
+.paso1 h2{
+    font-size: 2rem;
+    text-align: center;
+    color: #0b445a;
+font-family: 'Comfortaa', cursive;
+
+
+
+}
+
+.paso1 p {
+    color: #ffffff; 
+    text-align: center;
+}
+/*Fin paso 1*/
+
+/*Paso 2*/
+.paso2 {
+    background-color: #0b445a; 
+    padding: 3rem;
+    display: grid;
+    grid-template-rows: 0.5fr 1fr 1fr;
+    justify-content: center;
+    gap: 40px;
+    padding: 10rem;
+
+}
+
+.paso2 h2{
+    font-size: 2rem;
+    text-align: center;
+    color: #00b395;
+font-family: 'Comfortaa', cursive;
+
+
+
+}
+
+.paso2 p {
+    color: #ffffff; 
+    text-align: center;
+}
+/*Fin paso 2*/
+
+/*Paso 3*/
+.paso3 {
+    background: -webkit-linear-gradient(left, #25c481, #25b7c4);
+    background: linear-gradient(to right, #25c481, #25b7c4);
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+    padding: 10rem;
+
+
+}
+
+.paso3 h2{
+    font-size: 2rem;
+    text-align: center;
+    color: #0b445a;
+font-family: 'Comfortaa', cursive;
+
+
+}
+
+.paso3 p {
+    color: #ffffff; 
+    text-align: center;
+}
+/*Fin paso 3*/
+
+/*resultado*/
+/* .resultado {
+    background-color: #ffffff;
+    padding: 3rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+
+}
+
+.resultado h2{
+    text-align: center;
+    color: #0b445a;
+font-family: 'Comfortaa', cursive;
+
+
+}
+
+.resultado p {
+    color: #00b395; 
+    text-align: center;
+    font-size: 3rem;
+} */
+/*fin resultado*/
+
+/*Abajo*/
+.abajo {
+    background-color: #0b445a; 
+    padding: 3rem;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    justify-content: center;
+
+}
+
+.abajo h2{
+    font-size: 2rem;
+    text-align: center;
+    color: #ffffff;
+
+
+}
+
+.abajo p {
+    color: #25b79f; 
+    text-align: center;
+}
+/*Fin abajo*/
+
+
+select {
+    -webkit-appearance:none;
+    -moz-appearance:none;
+    -ms-appearance:none;
+    appearance:none;
+    outline:0;
+    box-shadow:none;
+    border:0!important;
+    background: #ffffff;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color:#3b3b3b;
+    cursor:pointer;
+    font-size: 1em;
+    font-family: "Quattrocento", sans-serif;
+
+
+}
+select::-ms-expand {
+    display: none;
+}
+.select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #5c6664;
+    overflow: hidden;
+    border-radius: .25em;
+}
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    /* background: #2b2e2e; */
+    cursor:pointer;
+    pointer-events:none;
+    transition:.25s all ease;
+}
+.select:hover::after {
+    color: #23b499;
+}
