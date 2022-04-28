@@ -57,7 +57,7 @@ color: #f0f0e6;
     display: grid;
     grid-template-rows: 1fr 1fr;
     justify-content: center;
-    padding: 6rem 1rem 3rem 0rem;
+    padding: 4rem 1rem 2rem 0rem;
 
 
 }
@@ -66,11 +66,10 @@ color: #f0f0e6;
     font-size: 2rem;
     text-align: center;
     color: #0b445a;
-font-family: 'Comfortaa', cursive;
-
-
+    font-family: 'Comfortaa', cursive;
 
 }
+
 
 .paso1 p {
     color: #ffffff; 
@@ -85,7 +84,7 @@ font-family: 'Comfortaa', cursive;
     grid-template-rows: 1fr;
     justify-content: center;
     gap: 5rem;
-    padding-bottom: 8rem;
+    padding-bottom: 6rem;
 }
 
 .texto1{
@@ -224,11 +223,18 @@ font-family: 'Comfortaa', cursive;
     width: 10rem;
     height: 4rem;
     border-radius: 2rem;
-    font-family: "Quattrocento", sans-serif;
+    /* font-family: "Quattrocento", sans-serif; */
+    font-family: 'Comfortaa', cursive;
+
     font-size: 1.5rem;
     color: #000;
     background-color: #ffffff;
 
+}
+
+.boton:hover{
+    background-color: #0b445a;
+    color: #ffffff;
 }
 
 
@@ -275,8 +281,6 @@ font-family: 'Comfortaa', cursive;
     font-size: 2rem;
     text-align: center;
     color: #ffffff;
-
-
 }
 
 .abajo p {
@@ -297,6 +301,11 @@ font-family: 'Comfortaa', cursive;
     text-decoration: none;
     color: #00b395;
 }
+
+.abajo ul a:hover{
+    color: #ffffff;
+}
+
 /*Fin abajo*/
 
 
@@ -373,5 +382,17 @@ select::-ms-expand {
 
     .arriba h1{
         font-size: 2rem;
-    }   
+    }
+    
+    .abajo h2{
+        font-size: 1.5rem;
+        
+    }
+    
+
+    .abajo ul{
+        gap: 3rem;
+        
+    
+    }
 }
