@@ -1,39 +1,49 @@
-$(document).ready(function() {
-
-    // Transition effect for navbar and back-to-top icon
-    $(window).scroll(function() {
-      // checks if window is scrolled more than 500px, adds/removes solid class
-      if($(this).scrollTop() > 550) { 
-          $('.navbar').addClass('solid');
-          $('.back-to-top').addClass('visible'); 
-      } else {
-          $('.navbar').removeClass('solid');
-          $('.back-to-top').removeClass('visible');  
-      }
-
-    });
+// alert()
+let seleccionado = "Seleccionado";
 
 
-    // Scrolling effect for Arrow icons
-    $("#scrollIcon").click(function(e) {
-        e.preventDefault();
-        $.scrollTo($("#about"), 1000);
-    });
-    $("#nav-about").click(function(e) {
-        e.preventDefault();
-        $.scrollTo($("#about"), 1000);
-    });
-    $("#nav-portfolio").click(function(e) {
-        e.preventDefault();
-        $.scrollTo($("#portfolio"), 1000);
-    });
-    $("#nav-contact").click(function(e) {
-        e.preventDefault();
-        $.scrollTo($("#contact"), 1000);
-    });
-    $(".navbar-brand").click(function(e) {
-        e.preventDefault();
-        $.scrollTo(0, 1000);
-    });
-      
-  });
+function mostrar_img(src, width, height, alt) {
+    let a = document.createElement("img");
+    a.src = src;
+    a.width = width;
+    a.height = height;
+    a.alt = alt;
+    document.body.appendChild(a);
+}
+
+// mostrar_img("./multimedia/Verduras.png", 200, 200, "verduras");
+
+
+
+class Producto {
+    constructor(nombre, precioPromedio) {
+        this.nombre = nombre;
+        this.precioPromedio = precioPromedio;
+    
+    }
+}
+const productos = [];
+productos.push(new Producto("LECHUGA", 20));
+productos.push(new Producto("TOMATE", 25));
+productos.push(new Producto("PAPA", 30));
+productos.push(new Producto("CEBOLLA", 35));
+
+console.log(productos);
+
+function buscarProducto(name, producto){
+    return name.find(objeto => objeto.nombre === producto.toUpperCase());
+}
+
+function calcular(){ 
+for (let index = 0; index < 4; index++) {
+    let busqueda = buscarProducto(productos, prompt('BUSCAR PRODUCTO DE VERDULERIA'));
+    if(busqueda != undefined ){
+        alert('Producto: '+busqueda.nombre+ "\n" +"\n" + ' Precio Promedio: '+'$'+busqueda.precioPromedio);
+    }else{
+        alert('NO EXISTE PRODUCTO CON ESE NOMBRE');
+    }
+}
+}
+
+// calcular()
+
