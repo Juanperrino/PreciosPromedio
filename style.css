@@ -95,6 +95,9 @@ color: #f0f0e6;
     grid-column: 2/3;
     background: transparent;
     width: 15rem;
+    border-radius: 200px;
+    border: none;
+
 
 }
 
@@ -107,6 +110,7 @@ color: #f0f0e6;
     border: solid 1px #ffffff;
     cursor: pointer;
     grid-column: 2/3;
+    border-radius: 200px;
 
 }
 
@@ -132,6 +136,10 @@ color: #f0f0e6;
 .carteles .btn2{
     background: transparent;
     width: 15rem;
+    border-radius: 200px;
+    border: none;
+    
+
 
 }
 
@@ -143,6 +151,8 @@ color: #f0f0e6;
     background-position: center;
     border: solid 1px #ffffff;
     cursor: pointer;
+    border-radius: 200px;
+
 }
 
 .cartel2 h2{
@@ -150,14 +160,17 @@ color: #f0f0e6;
     font-family: "Quattrocento", sans-serif;
     cursor: pointer;
     color: #ffffff;
+    
 
 
 }
 
 .cartel2 img{
     width: 100%;
-    height: 10rem;
+    height: 7rem;
     cursor: pointer;
+    border-radius: 200px;
+
 }
 
 .cartel2:hover{
@@ -175,7 +188,7 @@ color: #f0f0e6;
     grid-template-rows: 0.5fr 1fr 1fr;
     justify-content: center;
     gap: 40px;
-    padding: 10rem;
+    padding: 8rem;
 
 }
 
@@ -349,6 +362,8 @@ font-family: 'Comfortaa', cursive;
     color: #ffffff;
 }
 
+
+
 /*Fin abajo*/
 
 
@@ -377,7 +392,7 @@ select::-ms-expand {
 .select {
     position: relative;
     display: flex;
-    width: 20em;
+    width: 18em;
     height: 3em;
     line-height: 3;
     background: #5c6664;
@@ -400,9 +415,26 @@ select::-ms-expand {
 }
 
 
+/*evento click button paso 1*/
+.cartel1.azul{
+
+    background-color: #0b445a;
+    background-image: url(./multimedia/check.png);
+
+    
+}
+
+.cartel2.azul{
+
+    background-color: #0b445a;
+    background-image: url(./multimedia/check.png);
+    
+}
 
 
 
+
+/*fin evento click button paso 1*/
 
 
 
@@ -467,9 +499,10 @@ select::-ms-expand {
     
 
     .abajo ul{
-        gap: 3rem;
+        gap: 1rem;
         
     
     }
 }
+
 

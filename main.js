@@ -1,15 +1,15 @@
 // alert()
-let seleccionado = "Seleccionado";
+// let seleccionado = "Seleccionado";
 
 
-function mostrar_img(src, width, height, alt) {
-    let a = document.createElement("img");
-    a.src = src;
-    a.width = width;
-    a.height = height;
-    a.alt = alt;
-    document.body.appendChild(a);
-}
+// function mostrar_img(src, width, height, alt) {
+//     let a = document.createElement("img");
+//     a.src = src;
+//     a.width = width;
+//     a.height = height;
+//     a.alt = alt;
+//     document.body.appendChild(a);
+// }
 
 // mostrar_img("./multimedia/Verduras.png", 200, 200, "verduras");
 
@@ -28,7 +28,6 @@ productos.push(new Producto("TOMATE", 25));
 productos.push(new Producto("PAPA", 30));
 productos.push(new Producto("CEBOLLA", 35));
 
-console.log(productos);
 
 function buscarProducto(name, producto){
     return name.find(objeto => objeto.nombre === producto.toUpperCase());
@@ -46,4 +45,41 @@ for (let index = 0; index < 4; index++) {
 }
 
 // calcular()
+
+
+let btn = document.getElementById('cartel1')
+let btn2 = document.getElementById('cartel2')
+let contador = 0;
+
+
+
+function cambio(){
+
+    if (contador==0){
+        btn.classList.add('azul')
+        contador=1;
+    }
+    else{
+        btn.classList.remove('azul')
+        contador=0;
+    }
+}
+
+function cambio2(){
+
+    if (contador==0){
+        btn2.classList.add('azul')
+        contador=1;
+    }
+    else{
+        btn2.classList.remove('azul')
+        contador=0;
+    }
+}
+
+
+btn.addEventListener('click',cambio,true);
+btn2.addEventListener('click',cambio2,true);
+
+
 
