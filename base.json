@@ -1,0 +1,14 @@
+[
+    {
+        "carniceria": {
+            "asado": "asado",
+            "vacio": "vacio"
+
+        },
+
+        "verduleria": {
+            "lechuga": "Lechuga",
+            "tomate": "tomate"
+        }
+    }
+]
