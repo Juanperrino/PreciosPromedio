@@ -1,96 +1,5 @@
 // alert()
 
-//PASO 3 BUSCA EL PRODUCTO
-
-//BUSCADOR
-let input = document.getElementById('autocompletado-input');
-let autocompletado_resultado = document.getElementById('autocompletado-resultado');
-
-input.addEventListener("keyup", (event) => {
-    // console.log(event.target.value);
-    autocompletado_resultado.style.display = "block";
-    let key = (event.target.value);
-
-    if (key.length > 1){
-        //buscar paises
-        buscar(key);
-    }
-})
-
-const buscar = (key) => {
-    fetch(`https://restcountries.com/v3.1/name/${key}`)
-        .then( res => res.json() )
-        .then( data => {
-            // console.log(data);
-            if(Array.isArray(data)){
-
-                construir_lista(data.map((item) => {
-                    return item.name.common;
-                }));
-            }
-            else{
-                construir_lista()
-            }
-        })
-        .catch(err => {console.log(err)})
-}
-
-const construir_lista = (items = []) => {
-    console.log(items);
-
-    autocompletado_resultado.innerHTML = "";
-
-    items.map((item) => {
-        autocompletado_resultado.innerHTML += `<li>${item}</li>`
-    })
-
-}
-
-autocompletado_resultado.addEventListener("click", (e) => {
-    if(e.target && e.target.nodeName == "LI"){
-        input.value = e.target.innerHTML;
-        construir_lista();
-    }
-});
-//FIN BUSCADOR
-
-
-//localStorage
-
-let productosCarniceria = ['ASADO', 'VACIO', 'PALETA', 'NALGA', 'CUADRIL']
-let productosVerduleria = ['TOMATE', 'LECHUGA', 'CEBOLLA', 'PAPA']
-
-function convertString(array){
-    return JSON.stringify(array)
-}
-
-let productosCarniceriaJson = convertString(productosCarniceria)
-let productosVerduleriaJson = convertString(productosVerduleria)
-
-function guardarLocalStorage(key, value){
-    return localStorage.setItem(key, value)
-}
-
-guardarLocalStorage("productosCarniceriaJson", productosCarniceriaJson)
-guardarLocalStorage("productosVerduleriaJson", productosVerduleriaJson)
-
-arry = JSON.parse(localStorage.getItem("productosVerduleriaJson"))
-
-let search = document.getElementById("search")
-search.addEventListener('click', ()=>{
-    for (index of arry){
-    // let produts = console.log(index)
-}
-});
-
-
-
-//end localStorage
-
-
-
-
-// fIN PASO 3 BUSCA EL PRODUCTO
 
 
 // PASO 1 SELECCIONA EL RUBRO
@@ -103,28 +12,36 @@ let contador = 0;
 
 function cambio(){
 
-    if (contador==0){
-        btn.classList.add('azul')
-        btn2.classList.remove('azul')
-        contador=1;
-    }
-    else{
-        btn.classList.remove('azul')
-        contador=0;
-    }
+    // if (contador==0){
+    //     btn.classList.add('azul')
+    //     btn2.classList.remove('azul')
+    //     contador=1;
+    // }
+    // else{
+    //     btn.classList.remove('azul')
+    //     contador=0;
+    // }
+
+    // PRACTICA OPERADOR TERNARIO
+    contador == 0 ? btn.classList.add('azul') + btn2.classList.remove('azul') + (contador = 1) : btn.classList.remove('azul') + (contador = 0);
 }
 
 function cambio2(){
 
-    if (contador==0){
-        btn2.classList.add('azul')
-        btn.classList.remove('azul')
-        contador=1;
-    }
-    else{
-        btn2.classList.remove('azul')
-        contador=0;
-    }
+    // if (contador==0){
+    //     btn2.classList.add('azul')
+    //     btn.classList.remove('azul')
+    //     contador=1;
+    // }
+    // else{
+    //     btn2.classList.remove('azul')
+    //     contador=0;
+    // }
+    
+
+    // PRACTICA OPERADOR TERNARIO
+
+    contador == 0 ? btn2.classList.add('azul') + btn.classList.remove('azul') + (contador = 1) : btn2.classList.remove('azul') + (contador = 0);
 }
 
 
@@ -144,6 +61,17 @@ let localidad = document.getElementById('localidad');
 let zonas = ['CABA', 'Zona Norte', 'Zona Sur', 'Zona Este', 'Zona Oeste'];
 
 let localidades = ['C1', 'C2', 'C3', 'C4', 'C5', 'N1', 'N2', 'N3', 'N4', 'N5', 'S1', 'S2', 'S3', 'S4', 'S5', 'E1', 'E2', 'E3', 'E4', 'E5', 'O1', 'O2', 'O3', 'O4', 'O5',];
+
+// PRACTICA DESETRUCTURACION ARRAYS
+
+const [a,b,c,d,e] = zonas;
+
+console.log(a,'\n'+b,'\n'+c,'\n'+d,'\n'+e);
+
+// SPREAD
+
+console.log(...localidades, ...zonas);
+
 
 
 function verLugares(arreglo, lugar){
@@ -189,9 +117,135 @@ zona.addEventListener('change', function(){
 })
 
 
+const but = document.getElementById('but');
 
-
-
-
+but.addEventListener('click', () => {
+    Swal.fire({
+        title: ' $300 ',
+        text: 'Es precio promedio de tu zona',
+        imageUrl: 'https://unsplash.it/400/200',
+        imageWidth: 400,
+        imageHeight: 200,
+        imageAlt: 'Custom image',
+    })
+})
 
 // fIN PASO 2 SELECCIONA LOCALIDAD/BARRIO
+
+
+
+
+//PASO 3 BUSCA EL PRODUCTO
+
+//BUSCADOR
+let input = document.getElementById('autocompletado-input');
+let autocompletado_resultado = document.getElementById('autocompletado-resultado');
+
+input.addEventListener("keyup", (event) => {
+    // console.log(event.target.value);
+    autocompletado_resultado.style.display = "block";
+    let key = (event.target.value);
+
+    // if (key.length > 1){
+        //buscar paises
+        // buscar(key);
+    // }
+
+    //PRACTICA OPERADOR AND
+    key.length > 1 && buscar(key);
+})
+
+const buscar = (key) => {
+    fetch(`https://restcountries.com/v3.1/name/${key}`)
+        .then( res => res.json() )
+        .then( data => {
+            // console.log(data);
+            if(Array.isArray(data)){
+
+                construir_lista(data.map((item) => {
+                    return item.name.common;
+                }));
+            }
+            else{
+                construir_lista()
+            }
+        })
+        .catch(err => {console.log(err)})
+}
+
+const construir_lista = (items = []) => {
+    console.log(items);
+
+    autocompletado_resultado.innerHTML = "";
+
+    items.map((item) => {
+        autocompletado_resultado.innerHTML += `<li>${item}</li>`
+    })
+
+}
+
+autocompletado_resultado.addEventListener("click", (e) => {
+    if(e.target && e.target.nodeName == "LI"){
+        input.value = e.target.innerHTML;
+        construir_lista();
+    }
+});
+//FIN BUSCADOR
+
+
+//localStorage
+
+// let productosCarniceria = ['ASADO', 'VACIO', 'PALETA', 'NALGA', 'CUADRIL']
+// let productosVerduleria = ['TOMATE', 'LECHUGA', 'CEBOLLA', 'PAPA']
+
+// function convertString(array){
+//     return JSON.stringify(array)
+// }
+
+// let productosCarniceriaJson = convertString(productosCarniceria)
+// let productosVerduleriaJson = convertString(productosVerduleria)
+
+// function guardarLocalStorage(key, value){
+//     return localStorage.setItem(key, value)
+// }
+
+// guardarLocalStorage("productosCarniceriaJson", productosCarniceriaJson)
+// guardarLocalStorage("productosVerduleriaJson", productosVerduleriaJson)
+
+// arry = JSON.parse(localStorage.getItem("productosVerduleriaJson"))
+
+// let search = document.getElementById("search")
+// search.addEventListener('click', ()=>{
+//     for (index of arry){
+//     let produts = console.log(index)
+// }
+// });
+
+//end localStorage
+
+
+
+
+// fIN PASO 3 BUSCA EL PRODUCTO
+
+
+
+
+// PRACTICA DESESTRUCTURACION
+
+const jugadores = {
+    nombre: "ronaldo",
+    edad: 30,
+    altura: 1.85,
+    posicion: {
+        principal: "delantero",
+        secundaria: "volante"
+    }
+}
+
+const {nombre, edad, altura} = jugadores;
+const {posicion: {principal},posicion:{secundaria}} = jugadores;
+
+console.log('nombre: '+nombre, 'edad: '+edad, 'altura: '+altura);
+console.log('posicion principal: '+principal);
+console.log('posicion secundaria: '+secundaria);
