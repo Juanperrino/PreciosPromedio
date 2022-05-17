@@ -195,31 +195,31 @@ autocompletado_resultado.addEventListener("click", (e) => {
 
 //localStorage
 
-// let productosCarniceria = ['ASADO', 'VACIO', 'PALETA', 'NALGA', 'CUADRIL']
-// let productosVerduleria = ['TOMATE', 'LECHUGA', 'CEBOLLA', 'PAPA']
+let productosCarniceria = ['ASADO', 'VACIO', 'PALETA', 'NALGA', 'CUADRIL']
+let productosVerduleria = ['TOMATE', 'LECHUGA', 'CEBOLLA', 'PAPA']
 
-// function convertString(array){
-//     return JSON.stringify(array)
-// }
+function convertString(array){
+    return JSON.stringify(array)
+}
 
-// let productosCarniceriaJson = convertString(productosCarniceria)
-// let productosVerduleriaJson = convertString(productosVerduleria)
+let productosCarniceriaJson = convertString(productosCarniceria)
+let productosVerduleriaJson = convertString(productosVerduleria)
 
-// function guardarLocalStorage(key, value){
-//     return localStorage.setItem(key, value)
-// }
+function guardarLocalStorage(key, value){
+    return localStorage.setItem(key, value)
+}
 
-// guardarLocalStorage("productosCarniceriaJson", productosCarniceriaJson)
-// guardarLocalStorage("productosVerduleriaJson", productosVerduleriaJson)
+guardarLocalStorage("productosCarniceriaJson", productosCarniceriaJson)
+guardarLocalStorage("productosVerduleriaJson", productosVerduleriaJson)
 
-// arry = JSON.parse(localStorage.getItem("productosVerduleriaJson"))
+arry = JSON.parse(localStorage.getItem("productosVerduleriaJson"))
 
-// let search = document.getElementById("search")
-// search.addEventListener('click', ()=>{
-//     for (index of arry){
-//     let produts = console.log(index)
-// }
-// });
+let search = document.getElementById("search")
+search.addEventListener('click', ()=>{
+    for (index of arry){
+    let produts = console.log(index)
+}
+});
 
 //end localStorage
 
