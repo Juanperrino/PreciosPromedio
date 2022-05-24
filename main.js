@@ -1,52 +1,71 @@
 // alert()
+// import firebase from "firebase/app";
+// import "firebase/firestore";
 
+// TODO: Replace the following with your app's Firebase project configuration
+// See: https://firebase.google.com/docs/web/learn-more#config-object
+const firebaseConfig = {
+    apiKey: "AIzaSyAbVeRAFmgkv4NlBsG0-xybXpbCDtioF8I",
+    authDomain: "dbpp-57bf2.firebaseapp.com",
+    projectId: "dbpp-57bf2",
+    storageBucket: "dbpp-57bf2.appspot.com",
+    messagingSenderId: "636932396973",
+    appId: "1:636932396973:web:b41c44a36e405884beb324"
+};
+// Initialize Firebase
+firebase.initializeApp(firebaseConfig);
+// Initialize Cloud Firestore and get a reference to the service
+const db = firebase.firestore();
 
 
 // PASO 1 SELECCIONA EL RUBRO
 
-let btn = document.getElementById('cartel1')
-let btn2 = document.getElementById('cartel2')
-let contador = 0;
+let rubro = document.getElementById('rubro');
+let rubros = ['carniceria', 'verduleria'];
+
+verLugares(rubros, rubro);
 
 
+// let btn = document.getElementById('cartel1')
+// let btn2 = document.getElementById('cartel2')
+// let contador = 0;
 
-function cambio(){
 
-    // if (contador==0){
-    //     btn.classList.add('azul')
-    //     btn2.classList.remove('azul')
-    //     contador=1;
-    // }
-    // else{
-    //     btn.classList.remove('azul')
-    //     contador=0;
-    // }
+// function cambio(){
+
+//     if (contador==0){
+//         btn.classList.add('azul')
+//         btn2.classList.remove('azul')
+//         contador=1;
+//     }
+//     else{
+//         btn.classList.remove('azul')
+//         contador=0;
+//     }
 
     // PRACTICA OPERADOR TERNARIO
-    contador == 0 ? btn.classList.add('azul') + btn2.classList.remove('azul') + (contador = 1) : btn.classList.remove('azul') + (contador = 0);
-}
+    // contador == 0 ? btn.classList.add('azul') + btn2.classList.remove('azul') + (contador = 1) : btn.classList.remove('azul') + (contador = 0);
+// }
 
-function cambio2(){
+// function cambio2(){
 
-    // if (contador==0){
-    //     btn2.classList.add('azul')
-    //     btn.classList.remove('azul')
-    //     contador=1;
-    // }
-    // else{
-    //     btn2.classList.remove('azul')
-    //     contador=0;
-    // }
+//     if (contador==0){
+//         btn2.classList.add('azul')
+//         btn.classList.remove('azul')
+//         contador=1;
+//     }
+//     else{
+//         btn2.classList.remove('azul')
+//         contador=0;
+//     }
     
-
     // PRACTICA OPERADOR TERNARIO
+    // contador == 0 ? btn2.classList.add('azul') + btn.classList.remove('azul') + (contador = 1) : btn2.classList.remove('azul') + (contador = 0);
+// }
 
-    contador == 0 ? btn2.classList.add('azul') + btn.classList.remove('azul') + (contador = 1) : btn2.classList.remove('azul') + (contador = 0);
-}
 
-
-btn.addEventListener('click',cambio,true);
-btn2.addEventListener('click',cambio2,true);
+// btn.addEventListener('click',cambio,true);
+// btn2.addEventListener('click',cambio2,true);
 
 
 // fIN PASO 1 SELECCIONA EL RUBRO
@@ -54,24 +73,21 @@ btn2.addEventListener('click',cambio2,true);
 
 
 // PASO 2 SELECCIONA LOCALIDAD/BARRIO
-
-let zona = document.getElementById('zona');
 let localidad = document.getElementById('localidad');
+let localidades = ['belgrano', 'caballito', 'palermo'];
 
-let zonas = ['CABA', 'Zona Norte', 'Zona Sur', 'Zona Este', 'Zona Oeste'];
+verLugares(localidades, localidad);
 
-let localidades = ['C1', 'C2', 'C3', 'C4', 'C5', 'N1', 'N2', 'N3', 'N4', 'N5', 'S1', 'S2', 'S3', 'S4', 'S5', 'E1', 'E2', 'E3', 'E4', 'E5', 'O1', 'O2', 'O3', 'O4', 'O5',];
 
-// PRACTICA DESETRUCTURACION ARRAYS
+// fIN PASO 2 SELECCIONA LOCALIDAD/BARRIO
 
-const [a,b,c,d,e] = zonas;
 
-console.log(a,'\n'+b,'\n'+c,'\n'+d,'\n'+e);
 
-// SPREAD
 
-console.log(...localidades, ...zonas);
+//PASO 3 BUSCA EL PRODUCTO
 
+let producto = document.getElementById('producto');
+let productos = ['asado', 'vacio', 'bondiola', 'papa', 'lechuga', 'tomate'];
 
 
 function verLugares(arreglo, lugar){
@@ -82,170 +98,127 @@ function verLugares(arreglo, lugar){
     }
 
     lugar.innerHTML = elementos 
-}
-
-verLugares(zonas, zona);
+};
 
 
 function filtrar(array, inicio, fin, lugar){
     let filtro = array.slice(inicio, fin);
     verLugares(filtro, lugar);
-}
+};
 
-
-zona.addEventListener('change', function(){
-    let valor = zona.value 
+rubro.addEventListener('change', function(){
+    let valor = rubro.value;
 
     switch(valor){
-        case 'CABA':
-            filtrar(localidades, 0, 5, localidad);
+        case 'carniceria':
+            filtrar(productos, 0, 3, producto);
         break
-        case 'Zona Norte':
-            filtrar(localidades, 5, 10, localidad);
-        break
-        case 'Zona Sur':
-            filtrar(localidades, 10, 15, localidad);
-        break
-        case 'Zona Este':
-            filtrar(localidades, 15, 20, localidad);
-        break
-        case 'Zona Oeste':
-            filtrar(localidades, 20, 25, localidad);
+        case 'verduleria':
+            filtrar(productos, 3, 6, producto);
         break
     }
+});
 
-})
 
 
 const but = document.getElementById('but');
+const form1 = document.getElementById('form1');
+const form2 = document.getElementById('form2');
+const form3 = document.getElementById('form3');
 
-but.addEventListener('click', () => {
-    Swal.fire({
-        title: ' $300 ',
-        text: 'Es precio promedio de tu zona',
-        imageUrl: 'https://unsplash.it/400/200',
-        imageWidth: 400,
-        imageHeight: 200,
-        imageAlt: 'Custom image',
+function generator() {
+    let x= Math.floor((Math.random()*19)+1)
+    // console.log(x);
+    document.getElementById('divImage').innerHTML=`
+        <img src="img/resized/number${x}.jpg" style="width:15em, background-size: 100%;">
+    `;
+}
+
+function ver(){
+
+    rubro = document.getElementById('rubro').value;
+    localidad = document.getElementById('localidad').value;
+    producto = document.getElementById('producto').value;
+    // console.log(rubro)
+    // console.log(localidad)
+    // console.log(producto)
+    db.collection(rubro).where("localidad", "==", localidad).where("producto", "==", producto)
+    .get()
+    .then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+                Swal.fire({
+                    title: `El precio promedio de ${doc.data().producto} para ${doc.data().localidad}  es:`,
+                    html: '<div id="divImage"></div>',
+                    imageAlt: 'Custom image',
+                    // confirmButtonText: 'OK',
+                    // confirmButtonColor:'#0b445a',
+                    showConfirmButton: false,
+                    timer: 9500,
+                    timerProgressBar: true,
+                    allowOutsideClick: false,
+                    allowEscapeKey: false,
+                    allowEnterKey: false,
+                    stopKeydownPropagation: false,
+                    footer:`$${doc.data().precio}/kg`,
+                    customClass:{
+                        popup:'popupClass',
+                        title:'titleClass',
+                        footer:'footerClass',
+                    }
+                })
+                generator();
+                esperar();
+
+                // location.reload();
+
+        });
     })
-})
-
-// fIN PASO 2 SELECCIONA LOCALIDAD/BARRIO
-
-
-
-
-//PASO 3 BUSCA EL PRODUCTO
-
-//BUSCADOR
-let input = document.getElementById('autocompletado-input');
-let autocompletado_resultado = document.getElementById('autocompletado-resultado');
-
-input.addEventListener("keyup", (event) => {
-    // console.log(event.target.value);
-    autocompletado_resultado.style.display = "block";
-    let key = (event.target.value);
-
-    // if (key.length > 1){
-        //buscar paises
-        // buscar(key);
-    // }
-
-    //PRACTICA OPERADOR AND
-    key.length > 1 && buscar(key);
-})
-
-const buscar = (key) => {
-    fetch(`https://restcountries.com/v3.1/name/${key}`)
-        .then( res => res.json() )
-        .then( data => {
-            // console.log(data);
-            if(Array.isArray(data)){
-
-                construir_lista(data.map((item) => {
-                    return item.name.common;
-                }));
-            }
-            else{
-                construir_lista()
-            }
-        })
-        .catch(err => {console.log(err)})
-}
-
-const construir_lista = (items = []) => {
-    console.log(items);
-
-    autocompletado_resultado.innerHTML = "";
-
-    items.map((item) => {
-        autocompletado_resultado.innerHTML += `<li>${item}</li>`
-    })
+    
+    .catch((error) => {
+        console.log("Error al obtener documentos: ", error);
+    });
 
 }
 
-autocompletado_resultado.addEventListener("click", (e) => {
-    if(e.target && e.target.nodeName == "LI"){
-        input.value = e.target.innerHTML;
-        construir_lista();
-    }
-});
-//FIN BUSCADOR
-
-
-//localStorage
-
-let productosCarniceria = ['ASADO', 'VACIO', 'PALETA', 'NALGA', 'CUADRIL']
-let productosVerduleria = ['TOMATE', 'LECHUGA', 'CEBOLLA', 'PAPA']
-
-function convertString(array){
-    return JSON.stringify(array)
-}
-
-let productosCarniceriaJson = convertString(productosCarniceria)
-let productosVerduleriaJson = convertString(productosVerduleria)
-
-function guardarLocalStorage(key, value){
-    return localStorage.setItem(key, value)
-}
-
-guardarLocalStorage("productosCarniceriaJson", productosCarniceriaJson)
-guardarLocalStorage("productosVerduleriaJson", productosVerduleriaJson)
-
-arry = JSON.parse(localStorage.getItem("productosVerduleriaJson"))
-
-let search = document.getElementById("search")
-search.addEventListener('click', ()=>{
-    for (index of arry){
-    let produts = console.log(index)
-}
-});
-
-//end localStorage
-
-
-
+// location.reload();
 
 // fIN PASO 3 BUSCA EL PRODUCTO
 
-
-
-
-// PRACTICA DESESTRUCTURACION
-
-const jugadores = {
-    nombre: "ronaldo",
-    edad: 30,
-    altura: 1.85,
-    posicion: {
-        principal: "delantero",
-        secundaria: "volante"
-    }
+function esperar(){
+    setTimeout(() => {
+        location.reload();
+        form1.reset();
+        form2.reset();
+        form3.reset();
+        console.log(rubro);
+        $(document).ready(function(){
+            $('html,body').scrollTop(0);
+        });
+    
+    }, 10000);
 }
 
-const {nombre, edad, altura} = jugadores;
-const {posicion: {principal},posicion:{secundaria}} = jugadores;
 
-console.log('nombre: '+nombre, 'edad: '+edad, 'altura: '+altura);
-console.log('posicion principal: '+principal);
-console.log('posicion secundaria: '+secundaria);
+const btnSwitch = document.querySelector('#switch');
+const arriba = document.querySelector('#arriba')
+const paso1 = document.querySelector('#paso1')
+const paso2 = document.querySelector('#paso2')
+const paso3 = document.querySelector('#paso3')
+const botones = document.querySelector('#botones')
+const abajo = document.querySelector('#abajo')
+
+
+btnSwitch.addEventListener('click', () => {
+    arriba.classList.toggle('dark');
+    paso1.classList.toggle('dark');
+    paso2.classList.toggle('dark');
+    paso3.classList.toggle('dark');
+    botones.classList.toggle('dark');
+    abajo.classList.toggle('dark');
+    rubro.classList.toggle('dark');
+    producto.classList.toggle('dark');
+    but.classList.toggle('dark');
+
+
+    btnSwitch.classList.toggle('active');
+})

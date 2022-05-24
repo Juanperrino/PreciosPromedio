@@ -5,26 +5,37 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/9795f47ae7.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="style.css">
+
     <title>PreciosPromedio</title>
 </head>
 
 <body>
     <div class="content">
         <header>
-            <div class="arriba">
+            <div class="arriba " id="arriba">
                 <h1 class="text-center">PreciosPromedio</h1>
                 <p class="lead text-center">Equilibrando la balanza</p>
+                <button class="switch" id="switch">
+                    <span><i class="fa-solid fa-sun"></i></span>
+                    <span><i class="fa-solid fa-moon"></i></span>
+                </button>
             </div>
         </header>
 
         <main>
-            <div class="paso1">
+            <div class="paso1 " id="paso1">
                 <h2 class="text-center">Paso 1</h2>
-                <p class="lead text-center">Selecciona el Rubro</p>
+                <!-- <p class="lead text-center">Selecciona el Rubro</p> -->
+                <form id="form1">
+                    <div class="grupo">
+                        <p class="lead text-center">Selecciona el Rubro</p>
+                        <select id="rubro" class="selected "></select>
+                    </div>
+                </form>
             </div>
-            <div class="carteles">
+            <!-- <div class="carteles">
                 <button id="primerBtn" class="btn1">
 
                     <div id="cartel1" class="cartel1 ">
@@ -42,44 +53,55 @@
                         <img src="./multimedia/Verduras.png" alt="las verduras">
                     </div>
                 </button>
-            </div>
-            <div class="paso2">
+            </div> -->
+            <div class="paso2" id="paso2">
                 <h2 class="text-center">Paso 2</h2>
-
-                <div class="grupo">
-                    <p class="lead text-center">Selecciona la Zona</p>
-                    <select name="" id="zona" class="selected"></select>
-                </div>
-
-                <div class="grupo">
-                    <p class="lead text-center">Selecciona la localidad</p>
-                    <select name="" id="localidad" class="selected"></select>
-                </div>
+                <form id="form2">
+                    <div class="grupo">
+                        <p class="lead text-center">Selecciona la localidad</p>
+                        <select id="localidad" class="selected2">
+                            <!-- <option></option>
+                            <option>belgrano</option>
+                            <option>caballito</option>
+                            <option>palermo</option> -->
+                        </select>
+                    </div>
+                </form>
             </div>
-            <div class="paso3">
+
+            <div class="paso3" id="paso3">
                 <h2 class="text-center">Paso 3</h2>
-                <p class="lead text-center">Busca el producto</p>
+                <p class="lead text-center"></p>
+                <form id="form3">
+                    <div class="grupo">
+                        <p class="lead text-center">Selecciona el producto</p>
+                        <select id="producto" class="selected3 "></select>
+                    </div>
+                </form>
+
+                <!-- <div id="imprimir"></div> -->
+
+                <!-- <div class="grupo">
+                    <p class="lead text-center">Productys</p>
+                    <select name="" id="producty" class="selected"></select>
+                </div> -->
 
                 <!-- <div id="search" class="buscador">  -->
                 <!--onclick='document.getElementById("search").innerHTML = calcular()'-->
                 <!-- <input type="text" placeholder="Buscar">
-            </div> -->
-                <div class="autocompletado" id="search">
+                </div> -->
+                <!-- <div class="autocompletado" id="search">
                     <input type="text" placeholder="Buscar Producto" id="autocompletado-input">
                     <ul id="autocompletado-resultado" class="autocompletado-resultado"></ul>
-                </div>
-
+                </div> -->
             </div>
-            <div class="botones">
-                <button id="but" class="boton"><span>¡Listo!</span></button>
+            <div class="botones" id="botones">
+                <button id="but" class="boton " onclick="ver()">¡Listo!</button>
             </div>
-            <!-- <div class="resultado">
-            <h2 class="text-center">El precio promedio de su zona es:</h2>
-            <p class="lead text-center">$300</p>
-        </div> -->
         </main>
+
         <footer>
-            <div class="abajo">
+            <div class="abajo" id="abajo">
                 <h2 class="text-center">Acerca de nosotros</h2>
                 <p class="lead text-center"></p>
                 <ul class="centered">
@@ -97,7 +119,14 @@
         </footer>
     </div>
 
+    <link rel="stylesheet" href="style.css">
+
+    <!--IMPORT FIREBASE-->
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
     <script src="main.js"></script>
 </body>
 
