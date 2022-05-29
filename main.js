@@ -18,54 +18,17 @@ firebase.initializeApp(firebaseConfig);
 const db = firebase.firestore();
 
 
+
+
+
+
+
 // PASO 1 SELECCIONA EL RUBRO
 
 let rubro = document.getElementById('rubro');
 let rubros = ['carniceria', 'verduleria'];
 
 verLugares(rubros, rubro);
-
-
-// let btn = document.getElementById('cartel1')
-// let btn2 = document.getElementById('cartel2')
-// let contador = 0;
-
-
-// function cambio(){
-
-//     if (contador==0){
-//         btn.classList.add('azul')
-//         btn2.classList.remove('azul')
-//         contador=1;
-//     }
-//     else{
-//         btn.classList.remove('azul')
-//         contador=0;
-//     }
-
-    // PRACTICA OPERADOR TERNARIO
-    // contador == 0 ? btn.classList.add('azul') + btn2.classList.remove('azul') + (contador = 1) : btn.classList.remove('azul') + (contador = 0);
-// }
-
-// function cambio2(){
-
-//     if (contador==0){
-//         btn2.classList.add('azul')
-//         btn.classList.remove('azul')
-//         contador=1;
-//     }
-//     else{
-//         btn2.classList.remove('azul')
-//         contador=0;
-//     }
-    
-    // PRACTICA OPERADOR TERNARIO
-    // contador == 0 ? btn2.classList.add('azul') + btn.classList.remove('azul') + (contador = 1) : btn2.classList.remove('azul') + (contador = 0);
-// }
-
-
-// btn.addEventListener('click',cambio,true);
-// btn2.addEventListener('click',cambio2,true);
 
 
 // fIN PASO 1 SELECCIONA EL RUBRO
@@ -78,10 +41,7 @@ let localidades = ['belgrano', 'caballito', 'palermo'];
 
 verLugares(localidades, localidad);
 
-
 // fIN PASO 2 SELECCIONA LOCALIDAD/BARRIO
-
-
 
 
 //PASO 3 BUSCA EL PRODUCTO
@@ -147,7 +107,7 @@ function ver(){
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
                 Swal.fire({
-                    title: `El precio promedio de ${doc.data().producto} para ${doc.data().localidad}  es:`,
+                    title: `El precio promedio de ${doc.data().producto} en ${doc.data().localidad}  es:`,
                     html: '<div id="divImage"></div>',
                     imageAlt: 'Custom image',
                     // confirmButtonText: 'OK',
@@ -207,8 +167,10 @@ const paso3 = document.querySelector('#paso3')
 const botones = document.querySelector('#botones')
 const abajo = document.querySelector('#abajo')
 
+cargarLocalStorage();
 
 btnSwitch.addEventListener('click', () => {
+    btnSwitch.classList.toggle('active');
     arriba.classList.toggle('dark');
     paso1.classList.toggle('dark');
     paso2.classList.toggle('dark');
@@ -218,7 +180,38 @@ btnSwitch.addEventListener('click', () => {
     rubro.classList.toggle('dark');
     producto.classList.toggle('dark');
     but.classList.toggle('dark');
+    // guardarValorLocalStorage(btnSwitch.classList.contains('dark'));
+    guardarValorLocalStorage(arriba.classList.contains('dark'));
+    // guardarValorLocalStorage(paso1.classList.contains('dark'));
+    // guardarValorLocalStorage(paso2.classList.contains('dark'));
+    // guardarValorLocalStorage(paso3.classList.contains('dark'));
+    // guardarValorLocalStorage(botones.classList.contains('dark'));
+    // guardarValorLocalStorage(abajo.classList.contains('dark'));
+    // guardarValorLocalStorage(rubro.classList.contains('dark'));
+    // guardarValorLocalStorage(producto.classList.contains('dark'));
+    // guardarValorLocalStorage(but.classList.contains('dark'));
 
-
-    btnSwitch.classList.toggle('active');
 })
+
+
+
+function cargarLocalStorage(){
+    const dark = localStorage.getItem('dark');
+    if(!dark){
+        guardarValorLocalStorage('false');
+    }else if(dark == 'true'){
+        arriba.classList.add('dark');
+        paso1.classList.add('dark');
+        paso2.classList.add('dark');
+        paso3.classList.add('dark');
+        botones.classList.add('dark');
+        abajo.classList.add('dark');
+        rubro.classList.add('dark');
+        producto.classList.add('dark');
+        but.classList.add('dark');
+    }
+}
+
+function guardarValorLocalStorage(value){
+    localStorage.setItem('dark', value);
+}

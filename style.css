@@ -46,7 +46,9 @@ p {
 }
 
 .arriba.dark{
-    background-color: #000;
+    /* background: -webkit-linear-gradient(left, #000000, #000000);
+    background: linear-gradient(to right, #000000, #000000); */
+    background-color: rgb(32,32,44);
     transition: .3s ease all;
 }
 
@@ -76,7 +78,8 @@ p {
 }
 
 .paso1.dark{
-    background: #222222;
+    background: -webkit-linear-gradient(left, #141414, #222222);
+    background: linear-gradient(to right, #141414, #222222);
     transition: .3s ease all;
     border-bottom: solid 1px #222222;
 
@@ -336,7 +339,8 @@ p {
 }
 
 .paso3.dark{
-    background: #222222;
+    background: -webkit-linear-gradient(left, #141414, #222222);
+    background: linear-gradient(to right, #141414, #222222);
     transition: .3s ease all;
 
 }
@@ -403,7 +407,8 @@ input {
 }
 
 .botones.dark{
-    background: #222222;
+    background: -webkit-linear-gradient(left, #141414, #222222);
+    background: linear-gradient(to right, #141414, #222222);
     transition: .3s ease all;
 
 }
@@ -636,17 +641,7 @@ font-family: 'Comfortaa', cursive;
 }
 
 
-
-
-
-
-
-
 /*---------------------END SWITCH--------------------------*/
-
-
-
-
 
 
 @media screen and (max-width:600px) {
@@ -701,6 +696,12 @@ font-family: 'Comfortaa', cursive;
 
     }
 }
+
+
+
+
+
+
 
 
 
