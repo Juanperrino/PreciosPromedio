@@ -29,7 +29,9 @@ p {
     color: #f0f0e6;
 }
 
-
+.titlePrincipal{
+    color: #00b395;
+}
 
 .arriba {
     background-color: #07374a;
@@ -46,9 +48,10 @@ p {
 }
 
 .arriba.dark{
-    /* background: -webkit-linear-gradient(left, #000000, #000000);
-    background: linear-gradient(to right, #000000, #000000); */
-    background-color: #20202c;
+    background: -webkit-linear-gradient(left, #141414, #222222);
+    background: linear-gradient(to right, #141414, #222222);
+    /* background-color: #101010; */
+    border-bottom: solid 1px #3b3b3b;
     transition: .3s ease all; 
 }
 
@@ -78,11 +81,12 @@ p {
 }
 
 .paso1.dark{
-    background: -webkit-linear-gradient(left, #141414, #222222);
-    background: linear-gradient(to right, #141414, #222222);
+    background: -webkit-linear-gradient(left, #161a1a, #151616);
+    background: linear-gradient(to right, #161a1a, #151616);
     transition: .3s ease all;
     border-bottom: solid 1px #222222;
-    /* background: #121212; */
+    /* background: #161a1a; */
+    
 
 }
 
@@ -224,7 +228,9 @@ p {
 }
 
 .paso2.dark{
-    background: #20202c;
+    background: -webkit-linear-gradient(left, #141414, #222222);
+    background: linear-gradient(to right, #141414, #222222);
+    /* background: #20202c; */
     transition: .3s ease all;
     border-bottom: solid 1px #222222;
 
@@ -340,9 +346,10 @@ p {
 }
 
 .paso3.dark{
-    background: -webkit-linear-gradient(left, #141414, #222222);
-    background: linear-gradient(to right, #141414, #222222);
+    background: -webkit-linear-gradient(left, #161a1a, #151616);
+    background: linear-gradient(to right, #161a1a, #151616);
     transition: .3s ease all;
+    /* background: #20202c;  */
 
 }
 
@@ -408,8 +415,9 @@ input {
 }
 
 .botones.dark{
-    background: -webkit-linear-gradient(left, #141414, #222222);
-    background: linear-gradient(to right, #141414, #222222);
+    /* background: #20202c; */
+    background: -webkit-linear-gradient(left, #161a1a, #151616);
+    background: linear-gradient(to right, #161a1a, #151616);
     transition: .3s ease all;
 
 }
@@ -479,7 +487,10 @@ font-family: 'Comfortaa', cursive;
 }
 
 .abajo.dark{
-    background: #20202c;
+    /* background: #20202c; */
+    background: -webkit-linear-gradient(left, #141414, #222222);
+    background: linear-gradient(to right, #141414, #222222);
+    border-top: solid 1px #3b3b3b;
 }
 
 .abajo h2 {
