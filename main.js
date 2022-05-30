@@ -90,7 +90,13 @@ function generator() {
     let x= Math.floor((Math.random()*19)+1)
     // console.log(x);
     document.getElementById('divImage').innerHTML=`
-        <img src="img/resized/number${x}.jpg" style="width:15em, background-size: 100%;">
+        <img src="img/resized/number${x}.jpg"
+        style="
+        background-size: contain;
+        max-width:15em,
+        min-width: 5em,
+        background-size: 100%;
+        ">
     `;
 }
 
@@ -107,7 +113,7 @@ function ver(){
     .then((querySnapshot) => {
         querySnapshot.forEach((doc) => {
                 Swal.fire({
-                    title: `El precio promedio de ${doc.data().producto} en ${doc.data().localidad}  es:`,
+                    title: `El $ Promedio de ${doc.data().producto} en ${doc.data().localidad}  es:`,
                     html: '<div id="divImage"></div>',
                     imageAlt: 'Custom image',
                     // confirmButtonText: 'OK',
@@ -167,31 +173,7 @@ const paso3 = document.querySelector('#paso3')
 const botones = document.querySelector('#botones')
 const abajo = document.querySelector('#abajo')
 
-cargarLocalStorage();
 
-btnSwitch.addEventListener('click', () => {
-    btnSwitch.classList.toggle('active');
-    arriba.classList.toggle('dark');
-    paso1.classList.toggle('dark');
-    paso2.classList.toggle('dark');
-    paso3.classList.toggle('dark');
-    botones.classList.toggle('dark');
-    abajo.classList.toggle('dark');
-    rubro.classList.toggle('dark');
-    producto.classList.toggle('dark');
-    but.classList.toggle('dark');
-    // guardarValorLocalStorage(btnSwitch.classList.contains('dark'));
-    guardarValorLocalStorage(arriba.classList.contains('dark'));
-    // guardarValorLocalStorage(paso1.classList.contains('dark'));
-    // guardarValorLocalStorage(paso2.classList.contains('dark'));
-    // guardarValorLocalStorage(paso3.classList.contains('dark'));
-    // guardarValorLocalStorage(botones.classList.contains('dark'));
-    // guardarValorLocalStorage(abajo.classList.contains('dark'));
-    // guardarValorLocalStorage(rubro.classList.contains('dark'));
-    // guardarValorLocalStorage(producto.classList.contains('dark'));
-    // guardarValorLocalStorage(but.classList.contains('dark'));
-
-})
 
 
 
@@ -215,3 +197,37 @@ function cargarLocalStorage(){
 function guardarValorLocalStorage(value){
     localStorage.setItem('dark', value);
 }
+
+function cargarLocalStorage2(){
+    const active = localStorage.getItem('active');
+    if(!active){
+        guardarValorLocalStorage2('false');
+    }else if(active == 'true'){
+        btnSwitch.classList.add('active');
+    }
+}
+
+function guardarValorLocalStorage2(value){
+    localStorage.setItem('active', value);
+}
+
+cargarLocalStorage();
+cargarLocalStorage2();
+
+
+btnSwitch.addEventListener('click', () => {
+    btnSwitch.classList.toggle('active');
+    arriba.classList.toggle('dark');
+    paso1.classList.toggle('dark');
+    paso2.classList.toggle('dark');
+    paso3.classList.toggle('dark');
+    botones.classList.toggle('dark');
+    abajo.classList.toggle('dark');
+    rubro.classList.toggle('dark');
+    producto.classList.toggle('dark');
+    but.classList.toggle('dark');
+    guardarValorLocalStorage2(btnSwitch.classList.contains('active'));
+    guardarValorLocalStorage(arriba.classList.contains('dark'));
+})
+
+

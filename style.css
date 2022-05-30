@@ -48,8 +48,8 @@ p {
 .arriba.dark{
     /* background: -webkit-linear-gradient(left, #000000, #000000);
     background: linear-gradient(to right, #000000, #000000); */
-    background-color: rgb(32,32,44);
-    transition: .3s ease all;
+    background-color: #20202c;
+    transition: .3s ease all; 
 }
 
 .arriba h1 {
@@ -82,6 +82,7 @@ p {
     background: linear-gradient(to right, #141414, #222222);
     transition: .3s ease all;
     border-bottom: solid 1px #222222;
+    /* background: #121212; */
 
 }
 
@@ -223,7 +224,7 @@ p {
 }
 
 .paso2.dark{
-    background: #000;
+    background: #20202c;
     transition: .3s ease all;
     border-bottom: solid 1px #222222;
 
@@ -313,8 +314,8 @@ p {
 }
 
 .selected3.dark{
-    border: solid 1.5px #ff0000;
-    color: #ff0000;
+    border: solid 1.5px #C82B36;
+    color: #C82B36;
     transition: .3s ease all;
 
 }
@@ -346,7 +347,7 @@ p {
 }
 
 .paso3.dark h2{
-    color: #ff0000;
+    color: #C82B36;
     transition: .3s ease all;
 
 }
@@ -478,7 +479,7 @@ font-family: 'Comfortaa', cursive;
 }
 
 .abajo.dark{
-    background: #000;
+    background: #20202c;
 }
 
 .abajo h2 {
@@ -580,7 +581,7 @@ font-family: 'Comfortaa', cursive;
 
 
 .footerClass{
-    font-size: 5rem;
+    font-size: 4rem;
     margin: 0;
     padding: 2rem;
     font-family: 'Comfortaa', cursive;
