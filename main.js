@@ -17,7 +17,11 @@ firebase.initializeApp(firebaseConfig);
 // Initialize Cloud Firestore and get a reference to the service
 const db = firebase.firestore();
 
-
+if ('serviceWorker' in navigator){
+    navigator.serviceWorker.register('./sw.js')
+    .then(reg => console.log('Registro ok',reg))
+    .catch(err => console.warn('Error al registrar SW', err))
+}
 
 
 
