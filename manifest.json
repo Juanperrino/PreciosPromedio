@@ -1,14 +1,14 @@
 {
     "name": "#PreciosPromedio",
-    "short_name": "#$P",
+    "short_name": "Precio$Promedio",
     "description": "Bienvenidos a #PreciosPromedio, app para saber si estas comprando caro",
     "backgroun_color": "#2B2B2B",
-    "theme_color":"#F0DB4F",
+    "theme_color":"#3B3B3B",
     "orientation": "portrait",
     "display":"standalone",
     "start_url":"./?utm_source=web_app_manifest",
     "scope":"./",
-    "lang": "es-MX",
+    "lang": "es-ES",
     "icons":[
         {
             "src": "./multimedia/android-chrome-512x512.png",
