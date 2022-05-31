@@ -30,7 +30,7 @@ if ('serviceWorker' in navigator){
 // PASO 1 SELECCIONA EL RUBRO
 
 let rubro = document.getElementById('rubro');
-let rubros = ['carniceria', 'verduleria'];
+let rubros = ['Carniceria', 'Verduleria'];
 
 verLugares(rubros, rubro);
 
@@ -41,7 +41,7 @@ verLugares(rubros, rubro);
 
 // PASO 2 SELECCIONA LOCALIDAD/BARRIO
 let localidad = document.getElementById('localidad');
-let localidades = ['belgrano', 'caballito', 'palermo'];
+let localidades = ['Avellaneda', 'Gerli', 'Lanus', 'Remedios de Escalada', 'Banfield', 'Lomas de Zamora', 'Temperley'];
 
 verLugares(localidades, localidad);
 
@@ -51,7 +51,7 @@ verLugares(localidades, localidad);
 //PASO 3 BUSCA EL PRODUCTO
 
 let producto = document.getElementById('producto');
-let productos = ['asado', 'vacio', 'bondiola', 'papa', 'lechuga', 'tomate'];
+let productos = ['Asado', 'Bife angosto', 'Bife con lomo', 'Cuadrada', 'Cuadril', 'Nalga', 'Paleta', 'Roast beef', 'Tapa de asado', 'Tapa de nalga', 'Vacio', 'Papa', 'Lechuga', 'Tomate', 'Cebolla', 'Zanahoria', 'Zapallito', 'Calabaza', 'Acelga', 'Espinaca', 'Cebolla', 'Morron', 'Banana', 'Mandarina', 'Pera'];
 
 
 function verLugares(arreglo, lugar){
@@ -74,11 +74,11 @@ rubro.addEventListener('change', function(){
     let valor = rubro.value;
 
     switch(valor){
-        case 'carniceria':
-            filtrar(productos, 0, 3, producto);
+        case 'Carniceria':
+            filtrar(productos, 0, 10, producto);
         break
-        case 'verduleria':
-            filtrar(productos, 3, 6, producto);
+        case 'Verduleria':
+            filtrar(productos, 11, 25, producto);
         break
     }
 });
