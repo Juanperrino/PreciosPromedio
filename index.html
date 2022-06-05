@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -10,7 +9,6 @@
     <link rel="apple-touch-startup-image" href="./multimedia/apple-touch-icon.png">
     <script src="https://kit.fontawesome.com/9795f47ae7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
-
     <title>Precio$Promedio</title>
 </head>
 
@@ -26,17 +24,16 @@
                 </button>
             </div>
         </header>
-
         <main>
             <div class="paso1 " id="paso1">
                 <h2 class="text-center">Paso 1</h2>
-                <!-- <p class="lead text-center">Selecciona el Rubro</p> -->
                 <form id="form1">
                     <div class="grupo">
                         <p class="lead text-center">Selecciona el Rubro</p>
                         <select id="rubro" class="selected "></select>
                     </div>
                 </form>
+                <span><i class="fas fa-angle-down"></i></span>
             </div>
             <div class="paso2" id="paso2">
                 <h2 class="text-center">Paso 2</h2>
@@ -47,29 +44,24 @@
                         </select>
                     </div>
                 </form>
+                <span><i class="fas fa-angle-down"></i></span>
             </div>
-
             <div class="paso3" id="paso3">
                 <h2 class="text-center">Paso 3</h2>
-                <p class="lead text-center"></p>
                 <form id="form3">
                     <div class="grupo">
                         <p class="lead text-center">Selecciona el producto</p>
                         <select id="producto" class="selected3 "></select>
                     </div>
                 </form>
-
-
-            </div>
-            <div class="botones" id="botones">
-                <button id="but" class="boton " onclick="ver()">¡Listo!</button>
+                <div class="botones" id="botones">
+                    <button id="but" class="boton " onclick="ver()">¡Listo!</button>
+                </div>
             </div>
         </main>
-
         <footer>
             <div class="abajo" id="abajo">
                 <h2 class="text-center">Acerca de nosotros</h2>
-                <p class="lead text-center"></p>
                 <ul class="centered">
                     <a href="https://www.linkedin.com/in/juan-perrino-161361118/">
                         <li><i class="fa fa-linkedin-square"></i></li>
@@ -94,5 +86,4 @@
     <script src="https://code.jquery.com/jquery-latest.js"></script>
     <script src="main.js"></script>
 </body>
-
 </html>
