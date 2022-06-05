@@ -63,8 +63,7 @@ p {
     grid-template-rows: 0.5fr 1fr;
     justify-content: center;
     gap: 3.5rem;
-    padding: 10rem;
-    height: 100vh;
+    padding: 8rem;
 }
 
 .paso1.dark {
@@ -117,7 +116,6 @@ p {
     justify-content: center;
     gap: 3.5rem;
     padding: 8rem;
-    height: 100vh;
 }
 
 .paso2.dark {
@@ -214,7 +212,6 @@ p {
     justify-content: center;
     padding: 6rem 0rem 0rem 0rem;
     gap: 0.5rem;
-    height: 80vh;
 }
 
 .paso3.dark {
@@ -276,6 +273,7 @@ input {
     background-color: #ffffff;
     cursor: pointer;
     outline: none;
+    margin-bottom: 20px;
 }
 
 .boton:hover {
