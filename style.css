@@ -63,7 +63,7 @@ p {
     grid-template-rows: 0.5fr 1fr;
     justify-content: center;
     gap: 3.5rem;
-    padding: 8rem;
+    padding: 1.7rem 8rem 8rem 8rem;
 }
 
 .paso1.dark {
